@@ -9,7 +9,6 @@ allowed-tools:
   - Glob
   - Grep
   - AskUserQuestion
-argument-hint: "[target-domain]"
 ---
 
 # Career Spotlight Finder
@@ -40,13 +39,6 @@ Discover hidden strengths and career narratives from your past projects. Solves 
 2. Glob `~/.career-spotlight/analyses/*.md` and count the files.
 3. Tell the user: "Found N existing project analyses. New projects will be analyzed incrementally."
 
-**Target domain:**
-
-- If `$ARGUMENTS` was provided, record it as the target domain for Step 2.
-- If not provided, mark target domain as unset; it will be inferred in Step 2.
-
----
-
 ## Step 1 — Input Collection + Project Analysis
 
 1. Ask the user for one or more project source paths (directories or files).
@@ -57,11 +49,12 @@ Discover hidden strengths and career narratives from your past projects. Solves 
    - Which projects are **supporting** (次要) — these add breadth but are not the user's main story.
    - Do NOT assume the most recent project is the most important. The user decides.
    - Record each project's priority as `highlight` or `supporting` — this is stored in the analysis frontmatter and used throughout Steps 3-4.
-5. Glob each valid path to scan its contents. **Skip:** binary files, `node_modules/`, `.git/`, `__pycache__/`, `venv/`, `.env`. If a project has >50 files, warn the user and ask whether to proceed or narrow scope.
-6. Check existing analyses in `~/.career-spotlight/analyses/` by matching the `source_path` field in their frontmatter against the resolved canonical paths. Only analyze projects that are new.
-7. If ALL provided projects are already analyzed, offer the user a choice: re-analyze them or skip ahead to Steps 2-4.
-8. For each new project, read `guides/project-analysis-guide.md` and follow its methodology. The guide adapts analysis lens based on input type (research paper vs code repo vs document) and sub-field.
-9. Write each analysis to `~/.career-spotlight/analyses/[slugified-name].md` using `templates/project-analysis.md` as the template.
+5. If more than 8 projects are queued for analysis, gently recommend focusing on 5-8 projects that best represent the target direction. Explain that narrative quality is highest in this range — too many projects can dilute themes and stretch context. Suggest setting less central projects to `supporting` priority, or running the skill again later with a different subset. Do NOT enforce a hard limit; proceed if the user wants to continue with all projects.
+6. Glob each valid path to scan its contents. **Skip:** binary files, `node_modules/`, `.git/`, `__pycache__/`, `venv/`, `.env`. If a project has >50 files, warn the user and ask whether to proceed or narrow scope.
+7. Check existing analyses in `~/.career-spotlight/analyses/` by matching the `source_path` field in their frontmatter against the resolved canonical paths. For already-analyzed projects, compare the priority the user set in step 4 against the `user_priority` in the existing frontmatter; if they differ, update the frontmatter field (metadata-only, no re-analysis needed). Only run full analysis on projects that are new.
+8. If ALL provided projects are already analyzed, offer the user a choice: re-analyze them or skip ahead to Steps 2-4.
+9. For each new project, read `guides/project-analysis-guide.md` and follow its methodology. The guide adapts analysis lens based on input type (research paper vs code repo vs document) and sub-field.
+10. Write each analysis to `~/.career-spotlight/analyses/[slugified-name].md` using `templates/project-analysis.md` as the template.
 
 **Naming rules:**
 
@@ -73,17 +66,11 @@ Discover hidden strengths and career narratives from your past projects. Solves 
 
 ## Step 2 — Domain Positioning
 
-**If target domain was set via `$ARGUMENTS`:**
-
-1. Read `guides/domain-positioning-guide.md` Section 4 ("Loading References") and follow its methodology to load matching industry-terms reference files for the specified domain. Do NOT simply concatenate the domain string into a filename — use the semantic matching logic in the guide.
-2. Proceed directly to Step 3.
-
-**If target domain is unset:**
-
 1. Read `guides/domain-positioning-guide.md` and follow its full methodology (Sections 2-4).
-2. Present 2-3 candidate positioning directions to the user.
-3. Wait for the user to select one.
-4. Load references per Section 4 of the guide.
+2. Infer 2-3 candidate positioning directions, then recommend one framing to lead with. This may be a conventional `Primary Expert Framing` or a `Bridge Expert Framing` when adjacent directions are all strongly supported and the combination is itself the user's advantage.
+3. Present the recommendation first, including a short `Distinctiveness Thesis` that explains why the user stands out. Keep other directions as `Alternative Wrappers`, not competing identities.
+4. If the user expresses a clear preference for a different wrapper or target direction, use that as the confirmed framing. Otherwise, continue with the recommended framing. Do NOT force a narrow job-title label when a bridge framing better matches the evidence.
+5. Load references per Section 4 of the guide.
 
 ---
 

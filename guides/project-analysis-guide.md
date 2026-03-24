@@ -351,7 +351,7 @@ Use `templates/project-analysis.md` as the output format. Every analysis file mu
 ```yaml
 ---
 analysis_version: 1
-source_path: /absolute/path/to/project
+source_path: /absolute/canonical/path/to/project
 source_type: code-repo | paper | document | mixed
 user_priority: highlight | supporting
 analysis_lens: product-engineering | systems | theory | ml | security | hci | pl | research-other | professional-communication

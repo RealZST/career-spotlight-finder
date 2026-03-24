@@ -40,3 +40,11 @@
 | "used traces or production-like workloads for evaluation" | Trace-driven Evaluation / Production Workload Replay |
 | "showed system tradeoffs instead of just one best number" | Systems Trade-off Analysis |
 | "built a research prototype to validate an architecture idea" | Systems Prototype / Research Artifact |
+
+## Low-level Engineering
+
+| User's description | Industry term |
+|---|---|
+| "wrote a custom memory allocator or managed memory manually" | Custom Memory Management / Memory Pool Design |
+| "used lock-free or wait-free techniques" | Lock-free / Wait-free Concurrency |
+| "profiled and eliminated bottlenecks in hot paths" | Performance Profiling / Hot-path Optimization |

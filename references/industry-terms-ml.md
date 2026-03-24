@@ -97,6 +97,7 @@
 | "worked on graph-structured or non-Euclidean inputs" | Geometric Learning / Learning on Graphs |
 | "studied kernels, metrics, or similarity functions" | Kernel Methods / Metric Learning |
 | "focused on outputs with structure or constraints" | Structured Prediction / Compositional Modeling |
+| "tested learned representations across modalities" | Multimodal Representation Learning |
 
 ## Sequential Decision-making
 
@@ -105,4 +106,3 @@
 | "learned by taking actions and observing rewards" | Reinforcement Learning |
 | "planned over future outcomes before acting" | Planning / Model-based Decision-making |
 | "studied multiple agents interacting" | Multi-agent Reinforcement Learning |
-| "tested learned representations across modalities" | Multimodal Representation Learning |

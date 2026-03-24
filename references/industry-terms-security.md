@@ -42,3 +42,10 @@
 | "looked back after an incident to improve defenses" | Post-incident Review / Lessons Learned |
 | "mapped findings to likely attacker behavior" | Threat Intelligence / Attack-path Analysis |
 | "checked whether controls met policy or audit needs" | Compliance Controls / Audit Readiness |
+
+## Cloud Security
+
+| User's description | Industry term |
+|---|---|
+| "set up policies for cloud accounts" | Cloud Security Posture Management (CSPM) |
+| "reviewed IAM policies for over-permissioning" | IAM Policy Review / Permissions Boundary Audit |

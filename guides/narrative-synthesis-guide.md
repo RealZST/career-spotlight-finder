@@ -14,7 +14,7 @@ By the end of this step you will produce:
 
 - **Theme lines** — 2-5 clusters of related projects that form coherent professional narratives.
 - **Narrative arcs** — for each theme line, a story from origin to peak that shows growth.
-- **A positioning statement** — one sentence capturing the user's core professional value.
+- **A positioning statement** — one sentence capturing the user's core professional value, expert center, and distinctiveness thesis.
 - **Cross-theme capabilities** — differentiators that span the user's entire career.
 - **Blind spots** — gaps the user should prepare for.
 - **A consolidated term mapping table** — standardized industry terminology across all projects.
@@ -181,13 +181,13 @@ Thread Discovery:
 
 **If no thread was found:** Rank independent theme lines by relevance as below.
 
-Given the target domain (set in Step 2 or via `$ARGUMENTS`), rank the theme lines (or chapters) by relevance:
+Given the confirmed framing from Step 2, rank the theme lines (or chapters) by relevance:
 
 | Rank | Role | Report Weight | Criteria |
 |------|------|---------------|----------|
-| **Main line** | Core value proposition | ~50% | Most directly relevant to the target domain. This is the "headline" of the user's career story. |
-| **Supporting line** | Differentiation | ~30% | Relevant but distinct from the main line. This is what makes the user stand out from other candidates with similar main-line skills. |
-| **Supplementary line** | Depth / soft skills | ~20% | Cross-cutting capabilities, soft skills, or adjacent expertise. Adds dimension. |
+| **Main line** | Core value proposition | ~50% | Most directly relevant to the confirmed framing. This is the headline center of gravity of the user's story. |
+| **Supporting line** | Differentiation | ~30% | Relevant but distinct from the main line. It should sharpen why the user is special, not merely sit off to the side. |
+| **Supplementary line** | Depth / soft skills | ~20% | Cross-cutting capabilities, soft skills, or adjacent expertise. Adds dimension without diluting the main expert frame. |
 
 **Respecting user-designated project priorities:**
 
@@ -201,6 +201,8 @@ If there are more than 3 theme lines, the extras become supplementary (share the
 If there are only 2 theme lines, assign one as main and one as supporting. Omit supplementary.
 
 If there is only 1 theme line, it is the main line. Look for sub-themes within it to create a supporting angle.
+
+At the end of ranking, the report should converge on **one** credible expert-facing story. That story may be a narrow specialist framing or a bridge framing. Do not present the user as three equally weighted identities, but also do not force them into a narrower box than the evidence supports.
 
 ### Narrative Structure Decision
 
@@ -226,6 +228,8 @@ Example: "My career is a journey through reinforcement learning. I started by de
 > "My work spans three complementary areas: [main], [supporting], and [supplementary]. Together they make me uniquely effective at [positioning statement]."
 
 Record which narrative structure you are using — it will shape the report and copywriting.
+
+Regardless of structure, the final report should still read as a single expert story with supporting differentiators. The user may have multiple adjacent strengths; the report should make clear what they should be remembered for first **and** why their combination is distinctive.
 
 ---
 
@@ -405,16 +409,45 @@ Before writing, check if `~/.career-spotlight/report.md` already exists.
 
 ### Write the Report
 
-Write `~/.career-spotlight/report.md` using the format defined in `templates/aggregated-report.md`. The report must contain:
+Write `~/.career-spotlight/report.md` using `templates/aggregated-report.md` as the base structure. The report must contain:
 
 1. **Meta section** — date, target domain, project count, theme line count.
 2. **One-Sentence Positioning** — synthesized from the theme line positioning statements. This is the single most important sentence in the entire report. It should:
-   - Name the user's professional identity (not a job title, but what they do).
-   - Reference the main theme line.
+   - Name the user's expert center or bridge framing (not just a vague job family).
+   - Reference the main theme line (or the overarching thread, if one was discovered).
    - Include a differentiator from the supporting theme line.
+   - Make clear why the user is more memorable than a more conventional candidate in the same area.
    - Be specific enough that it could not describe just anyone in the field.
+   - Read like one coherent expert story, not like three competing labels jammed together.
 3. **Term Mapping Table** — the consolidated table from Step 3d.
-4. **Theme Lines** — each with its narrative arc (origin, growth, peak, positioning) and key projects. Main line first, then supporting, then supplementary.
+4. **Theme Lines / Thread Chapters** — structure depends on the narrative decision from Section 4:
+
+   **If unified thread narrative (Option 1),** replace the template's independent theme line sections with this structure:
+
+   ```
+   ## Overarching Thread: [Thread Name]
+   [1-2 sentences: the single story connecting the user's work]
+
+   ### Chapter 1: [Name] (Origin Phase)
+   #### Narrative Arc
+   - **Origin:** [earliest project] — [what it established]
+   - **Growth:** [subsequent projects] — [how capability deepened]
+   - **Peak:** [strongest project] — [most impressive demonstration]
+   - **Positioning:** [what this chapter says about who you are]
+   - **Transition:** [insight or limitation from this chapter] → [next chapter]
+   #### Key Projects
+   - [Project] ★: [one-line highlight]
+   - [Project]: [one-line highlight]
+
+   ### Chapter 2: [Name] (Evolution Phase)
+   [Same structure; final chapter omits Transition]
+
+   ## Supplementary: [Name]
+   [For projects outside the thread, if any — use standard theme line structure]
+   ```
+
+   **If progressive or parallel narrative (Options 2-3),** use the template structure as-is — independent theme lines ranked main / supporting / supplementary.
+
 5. **Cross-Theme Capabilities** — from Section 7.
 6. **Blind Spots** — from Section 8.
 
@@ -424,12 +457,14 @@ Before finalizing the report, verify:
 
 - [ ] Every analyzed project appears in at least one theme line.
 - [ ] The positioning statement is specific and defensible (every claim is backed by a project).
+- [ ] The opening sections explain not only what bucket the user fits into, but why they are distinctive within it.
 - [ ] Term mappings are consistent — the same capability is not called different things in different theme lines.
 - [ ] Narrative arcs show genuine progression, not invented progression. If growth is limited, say so honestly.
 - [ ] Blind spots reference the specific target domain, not generic career advice.
 - [ ] The report uses target-domain terminology throughout, not the user's original colloquial descriptions.
 - [ ] If an overarching thread was discovered (Step 3a½), the report uses the unified thread narrative — theme lines are presented as connected chapters, not independent clusters.
 - [ ] Thread transitions are grounded in evidence from project analyses (Problem & Motivation, Research Trajectory), not fabricated.
+- [ ] If a bridge framing is being used, the secondary strength that makes the user distinctive is visible in the positioning statement and opening sections, not buried at the end.
 
 ---
 

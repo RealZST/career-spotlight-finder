@@ -36,6 +36,21 @@ The report is analytical. The copy is personal. Every sentence must cross that b
 **Good (direct, concrete):**
 > I redesigned the ingestion pipeline to handle 10TB/day -- a 4x throughput increase that eliminated the overnight processing backlog.
 
+### Expert-first framing
+
+- Lead with the report's **expert center**. The first impression should be "this person is clearly strong at X."
+- Use supporting theme lines as **differentiators**, not as competing identities. The structure is still focused, but the differentiator must answer "why this person?" rather than reading like an afterthought.
+- If the user's background spans adjacent directions, keep one credible center of gravity **without erasing the second strength that makes them memorable**.
+- Never undercut the positioning with disclaimers such as "I'm not really an expert in X," "I'm not a pure specialist," or "I kind of do several things." The point of this step is to package the user's work into a confident, defensible expert story.
+
+### Bridge profiles
+
+When the report uses a bridge framing, the copy should preserve the combination as part of the selling point.
+
+- Prefer **arc-first** writing when the combination itself is the story: "I started with X, that led me into Y, and what makes me different is that I can connect both to Z."
+- Do not reduce the secondary line to a weak final clause if it is core to the user's distinctiveness.
+- Keep the copy legible and focused, but allow the user to sound more interesting than a single narrow job-title label would allow.
+
 ---
 
 ## 2. Resume Bullets
@@ -98,6 +113,12 @@ Do not invent numbers. Do not estimate. Use only what the report supports.
 [Who I am] + [Main strength from main theme] + [One concrete proof point with numbers if possible] + [Differentiator from supporting theme]
 ```
 
+For bridge profiles, this alternative formula often works better:
+
+```
+[Where I started] + [What that led me into] + [Current center of gravity] + [What makes me different]
+```
+
 ### Example
 
 > I'm a backend engineer who specializes in making systems scale without falling over. At my last company, I redesigned the data pipeline to handle a 4x traffic increase with no added infrastructure cost. What sets me apart is that I don't just build for performance -- I build for the team. Every system I ship comes with runbooks, dashboards, and a handoff plan so the on-call engineer at 2 AM isn't guessing.
@@ -125,6 +146,8 @@ Do not invent numbers. Do not estimate. Use only what the report supports.
 **Opening (1-2 sentences):** The positioning statement from the report. This is the hook. It should make someone want to keep reading.
 
 **Body (2-3 short paragraphs):** Expand the main theme line and at least one supporting theme line. For each, include 1-2 concrete examples. Use the same direct, first-person voice as the resume bullets but in flowing prose rather than bullet format.
+
+If the user is a bridge profile, the body should make the progression or combination explicit rather than treating the second strong line as a side note.
 
 **Close (1-2 sentences):** What excites you or what you are looking for. This gives recruiters a reason to reach out and signals openness.
 

@@ -23,5 +23,8 @@ analyzed_date: [YYYY-MM-DD]
 - [Capability 1]: [evidence from project] → **[industry term]**
 - [Capability 2]: [evidence from project] → **[industry term]**
 
+## Research Trajectory
+[Papers only — omit this section for non-paper analyses. If included: broader area, prior limitation, what this enables next.]
+
 ## Transferable Pattern Tags
 #[tag1] #[tag2] #[tag3]
