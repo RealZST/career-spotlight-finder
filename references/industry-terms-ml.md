@@ -1,6 +1,6 @@
-# Industry Terms: Machine Learning
+# Industry Terms: Machine Learning / AI
 
-> **Usage note:** This is a supplementary reference for terms practitioners commonly *do* but rarely *name*. Claude already knows mainstream ML terminology. Use this file to catch colloquial or informal descriptions and map them to the recognized industry terms that belong on a resume or portfolio.
+> **Usage note:** This file is for the machine learning / AI domain broadly, including model development, evaluation, algorithmic work, and applied model-building. Claude already knows mainstream ML terminology. Use it to catch colloquial or informal descriptions and map them to the recognized industry terms that belong on a resume or portfolio. If the user's story is more about training infrastructure, serving, or AI platform work, pair this with the ML systems reference.
 
 ---
 
@@ -63,3 +63,46 @@
 | "checked model on different groups" | Disaggregated / Subgroup Evaluation |
 | "stress-tested the model" | Adversarial Robustness Testing |
 | "ran ablation studies" | Ablation Analysis / Component Attribution |
+
+## Foundation Models & LLMOps
+
+| User's description | Industry term |
+|---|---|
+| "tuned prompts instead of retraining" | Prompt Engineering / In-context Learning |
+| "adapted a base model with small updates" | Fine-tuning / Parameter-efficient Fine-tuning (PEFT, LoRA) |
+| "connected the model to documents or search" | Retrieval-Augmented Generation (RAG) |
+| "let the model use tools or APIs" | Tool Calling / Agentic Workflow Orchestration |
+| "kept prompts and outputs versioned" | LLMOps / Prompt Versioning |
+| "checked whether answers stayed grounded in sources" | Groundedness / Faithfulness Evaluation |
+| "reduced hallucinations" | Hallucination Mitigation / Guardrailed Generation |
+| "routed traffic to different models based on cost or speed" | Model Routing / Cost-performance Optimization |
+| "served many requests with batching or cache reuse" | Continuous Batching / Inference Caching |
+| "added safety filters before or after generation" | Safety Guardrails / Content Moderation Layer |
+
+## Algorithms, Theory & Representation Learning
+
+| User's description | Industry term |
+|---|---|
+| "learned useful features automatically" | Representation Learning |
+| "used labels for some data but not all of it" | Semi-supervised Learning |
+| "learned from unlabeled data first" | Self-supervised / Unsupervised Learning |
+| "adapted quickly to new tasks with little data" | Meta-learning / Few-shot Learning |
+| "transferred knowledge from one task to another" | Transfer Learning / Lifelong Learning |
+| "generated new samples instead of only predicting labels" | Generative Modeling |
+| "modeled uncertainty instead of one fixed answer" | Uncertainty Quantification / Probabilistic Modeling |
+| "captured cause and effect rather than only correlation" | Causal Representation / Causal Inference |
+| "analyzed why the model generalizes" | Generalization Analysis / Learning Theory |
+| "studied what assumptions make the algorithm work" | Theoretical Guarantees / Assumption-driven Analysis |
+| "used Bayesian or variational techniques" | Bayesian Methods / Variational Inference |
+| "worked on graph-structured or non-Euclidean inputs" | Geometric Learning / Learning on Graphs |
+| "studied kernels, metrics, or similarity functions" | Kernel Methods / Metric Learning |
+| "focused on outputs with structure or constraints" | Structured Prediction / Compositional Modeling |
+
+## Sequential Decision-making
+
+| User's description | Industry term |
+|---|---|
+| "learned by taking actions and observing rewards" | Reinforcement Learning |
+| "planned over future outcomes before acting" | Planning / Model-based Decision-making |
+| "studied multiple agents interacting" | Multi-agent Reinforcement Learning |
+| "tested learned representations across modalities" | Multimodal Representation Learning |

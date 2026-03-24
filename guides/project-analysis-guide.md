@@ -8,25 +8,43 @@ This guide teaches you how to extract hidden professional value from a single pr
 
 ## Input Reading Strategy
 
-Adapt your reading approach to the type of source material. The goal is to build a comprehensive mental model of the project with minimal file reads (target 15-20 files maximum for code repos).
+Adapt your reading approach to the type of source material. Different input types require fundamentally different strategies — papers are already-distilled narratives where you extract the author's framing, while code projects are raw material where you must discover the story yourself.
 
 ### Code Repository
 
-Read files in this order:
+Unlike papers, code projects are **raw, un-narrated work** — the user hasn't pre-identified their highlights. The README alone is insufficient because it only reflects what the user *chose* to document, not what they actually built. Your job is to dig into the project structure to discover capabilities the user doesn't know they have.
 
-1. **README** (README.md, README.rst, README.txt) -- understand stated purpose, setup instructions, and any feature descriptions.
-2. **Entry points** -- main.py, index.ts, index.js, app.py, main.go, Main.java, lib.rs, or whatever the language convention is. These reveal architecture and primary logic.
-3. **Config files** -- package.json, pyproject.toml, Cargo.toml, go.mod, Makefile, docker-compose.yml, Dockerfile, .github/workflows/*.yml, tsconfig.json, webpack.config.js. These are gold mines for hidden capabilities.
-4. **Directory structure** -- use Glob to scan the tree. Directory names reveal architecture (e.g., `src/middleware/`, `tests/integration/`, `locales/`, `k8s/`).
-5. **Key source files** -- based on what you learned from steps 1-4, read 5-10 source files that seem most important (models, core logic, utilities, middleware).
+**Layered reading strategy** (read in this order, target 15-20 files max):
+
+1. **README** (README.md, README.rst, README.txt) -- understand stated purpose, setup instructions, and any feature descriptions. This is the user's self-assessment — necessary but incomplete.
+2. **Directory structure** -- use Glob to scan the tree. Directory names reveal architecture (e.g., `src/middleware/`, `tests/integration/`, `locales/`, `k8s/`). This is often more revealing than the README.
+3. **Config files** -- package.json, pyproject.toml, Cargo.toml, go.mod, Makefile, docker-compose.yml, Dockerfile, .github/workflows/*.yml, tsconfig.json, webpack.config.js. These are gold mines for hidden capabilities — CI/CD, containerization, linting, and infrastructure choices the user takes for granted.
+4. **Entry points** -- main.py, index.ts, index.js, app.py, main.go, Main.java, lib.rs, or whatever the language convention is. These reveal architecture and primary logic.
+5. **Key source files** -- based on what you learned from steps 1-4, read 5-10 source files that seem most important (models, core logic, utilities, middleware). Prioritize files that reveal architectural decisions and engineering patterns.
 6. **Test files** -- scan 1-2 test files. Testing patterns reveal quality engineering practices.
 
 ### Paper (LaTeX/PDF)
 
-1. Read the abstract, introduction, methodology/methods, results, and conclusion sections.
-2. For PDF files: if extraction quality appears low (garbled text, missing sections, broken formatting), inform the user and suggest providing the .tex source files instead.
-3. For LaTeX: read the main .tex file first, then any \input or \include files for methodology and results.
-4. Check for supplementary materials, appendices, or code repositories referenced in the paper.
+Papers are **already-distilled narratives** — the author has already identified the contributions and framed the story. Reading the full paper is unnecessary and wasteful for career positioning purposes. Focus on the sections that contain high-level value signals.
+
+**Default reading scope (3 sections only):**
+
+1. **Abstract** — problem, approach, key result in compressed form.
+2. **Introduction** — especially the contributions list / "our contributions are:" paragraph. This is the most important section for career analysis.
+3. **Conclusion** — summary of results, limitations acknowledged, and future work (feeds directly into Research Trajectory).
+
+**Selective expansion** — read the Methods/Experiments section ONLY if the three core sections hint at hidden implementation work worth surfacing. Signals to watch for:
+- "We implement a distributed training system on N GPUs..."
+- "We build a custom data pipeline / simulator / platform..."
+- "Our system serves X requests per second in production..."
+
+If you see these signals, read only the relevant subsection of Methods — not the full section.
+
+**Practicalities:**
+
+- For PDF files: if extraction quality appears low (garbled text, missing sections, broken formatting), inform the user and suggest providing the .tex source files instead.
+- For LaTeX: read the main .tex file, locate the Abstract/Introduction/Conclusion sections. Only follow `\input` or `\include` for those sections.
+- **Identify the research sub-field** from the venue, keywords, or contribution framing — this determines the analysis lens (see "Analysis Lens by Input Type" section below).
 
 ### Document / Report
 
@@ -60,6 +78,74 @@ When you encounter an existing analysis file in `~/.career-spotlight/analyses/`:
 2. The current analysis version is **1**.
 3. If the existing file has an `analysis_version` older than 1 (or the field is missing), inform the user: "This project was analyzed with an older version of the methodology. Would you like to re-analyze it for more comprehensive results?"
 4. If the user declines re-analysis, use the existing file as-is for downstream steps.
+
+---
+
+## Analysis Lens by Input Type
+
+Different types of projects should be analyzed from different angles. A research paper's value is framed differently from a product repo's. Within research, sub-fields have distinct evaluation cultures. **Choose the right lens before running the five-dimension extraction.**
+
+### Lens A: Research Paper
+
+When the source is a paper (LaTeX, PDF, or academic document), analyze from a **research perspective**. The five dimensions should emphasize: what research question was asked, what methodology was used, what the contribution to the field is, and what research skills are demonstrated.
+
+**Sub-field adaptation** — identify the paper's sub-field and adjust what you emphasize:
+
+| Sub-field | What the community values most | Emphasize in analysis |
+|-----------|-------------------------------|----------------------|
+| **Systems** (OS, distributed systems, networking, databases) | Performance, scalability, reliability, real-world deployment | Throughput/latency numbers, system design decisions, benchmarks, deployment scale |
+| **Theory** (algorithms, complexity, formal methods) | Proofs, bounds, complexity classes, elegance of construction | Proof techniques, complexity improvements (e.g., O(n²)→O(n log n)), generality of results |
+| **AI/ML** (deep learning, NLP, CV, RL) | Model effectiveness, novelty of approach, benchmark results | SOTA improvements, novel architectures/loss functions, ablation rigor, dataset scale |
+| **Security** (crypto, network security, privacy) | Threat models, attack/defense novelty, practical impact | Attack success rates, defense overhead, real-world vulnerability discovery |
+| **HCI** (interaction design, accessibility, UX research) | User study rigor, design insights, real-world applicability | Study methodology, participant count, statistical significance, design implications |
+| **PL** (programming languages, compilers, verification) | Formal semantics, type soundness, practical tooling | Soundness proofs, expressiveness, compilation performance, adoption |
+
+If the sub-field is not listed, infer the community's values from the paper's related work and evaluation sections — what metrics do cited papers report? That tells you what matters.
+
+**Research-specific hidden capabilities to look for:**
+- Experimental design rigor (controls, baselines, ablations)
+- Cross-disciplinary methodology (borrowing techniques from another field)
+- Reproducibility practices (open-source code, documented hyperparameters)
+- Scientific communication (clear problem framing, compelling motivation)
+
+**Research trajectory signal** (CRITICAL for cross-project narrative):
+
+For every research paper, you MUST extract and record the following in the analysis. This is what enables the narrative synthesis step to discover how papers connect to each other — without it, papers that share a deep domain thread may appear unrelated.
+
+1. **Broader research area**: The high-level field this paper belongs to, stated simply. Examples: "reinforcement learning," "distributed systems for ML," "computer vision." This is NOT the specific contribution — it's the umbrella. Two papers may have completely different tags but share the same broader area.
+2. **What prior limitation motivated this work**: What gap, bottleneck, or failure in existing work drove this paper? Quote or paraphrase from the introduction/motivation section. Example: "Existing RL algorithms work in simple environments but fail in maze-like settings with long trajectories."
+3. **What this work enables next**: What does this paper make possible that wasn't possible before? What open problems remain? Example: "Enables RL training to scale elastically on GPU clusters, but buffer-side data handling remains a bottleneck."
+
+Record these three items in a `## Research Trajectory` section in the analysis output (between Hidden Capabilities and Transferable Pattern Tags). This section is only required for papers — skip it for code repos and documents.
+
+### Lens B: Code Repository / Product
+
+When the source is a repo, codebase, or product, analyze from a **product/engineering perspective**. The five dimensions should emphasize: what user problem was solved, what engineering decisions were made, how production-ready the system is, and what engineering practices are demonstrated.
+
+**Emphasize:**
+- Architecture decisions and trade-offs
+- Production readiness signals (monitoring, error handling, CI/CD, testing)
+- User-facing impact (users served, problems solved, workflow improvements)
+- Engineering craft (code quality, documentation, developer experience)
+
+### Lens C: Document / Report
+
+When the source is a non-academic document (design doc, postmortem, project report, business proposal), analyze from a **professional communication perspective**.
+
+**Emphasize:**
+- Decision-making process and trade-off analysis
+- Stakeholder communication skills
+- Quantified outcomes and business impact
+- Strategic thinking demonstrated
+
+### How to apply the lens
+
+The lens does NOT change which five dimensions you extract — you always extract all five. It changes **what you look for within each dimension** and **how you frame the findings**. For example:
+
+- Dimension 1 (Problem & Motivation): For a paper, frame as "research gap addressed." For a repo, frame as "user/business problem solved."
+- Dimension 2 (Methods & Technology): For a systems paper, emphasize benchmark methodology. For a repo, emphasize tech stack and architecture.
+- Dimension 3 (Scale & Impact): For a theory paper, emphasize generality of results. For a repo, emphasize users/data/throughput.
+- Dimension 4 (Hidden Capabilities): For a paper, look for experimental rigor and cross-disciplinary skills. For a repo, look for production engineering practices.
 
 ---
 
@@ -267,16 +353,19 @@ Use `templates/project-analysis.md` as the output format. Every analysis file mu
 analysis_version: 1
 source_path: /absolute/path/to/project
 source_type: code-repo | paper | document | mixed
+user_priority: highlight | supporting
+analysis_lens: product-engineering | systems | theory | ml | security | hci | pl | research-other | professional-communication
 analyzed_date: YYYY-MM-DD
 ---
 ```
 
-**Body sections (all required):**
-- `## Problem & Motivation` -- 1-2 sentences
-- `## Methods & Technology` -- bulleted list with term translations
-- `## Scale & Impact` -- bulleted list with quantified or qualified scope
-- `## Hidden Capabilities` -- bulleted list with evidence chains and term translations
-- `## Transferable Pattern Tags` -- 2-5 tags on a single line
+**Body sections:**
+- `## Problem & Motivation` -- 1-2 sentences (required)
+- `## Methods & Technology` -- bulleted list with term translations (required)
+- `## Scale & Impact` -- bulleted list with quantified or qualified scope (required)
+- `## Hidden Capabilities` -- bulleted list with evidence chains and term translations (required)
+- `## Research Trajectory` -- broader area, prior limitation, what this enables next (**papers only** — omit for code repos and documents)
+- `## Transferable Pattern Tags` -- 2-5 tags on a single line (required)
 
 ### Context Management
 

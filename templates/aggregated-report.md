@@ -1,9 +1,3 @@
-# Aggregated Report Template
-
-Use this format for the brand report written to `~/.career-spotlight/report.md`.
-
-## Structure
-
 # Career Brand Report
 
 ## Meta
@@ -27,6 +21,7 @@ Use this format for the brand report written to `~/.career-spotlight/report.md`.
 - **Peak:** [strongest project] — [most impressive demonstration]
 - **Positioning:** [what this line says about who you are]
 ### Key Projects
+- [Project] ★: [one-line highlight]
 - [Project]: [one-line highlight]
 
 ## Theme Line 2: [Name] (Supporting)

@@ -11,7 +11,7 @@ Domain positioning answers the question: **"What kind of role should these proje
 There are two scenarios:
 
 - **No target domain specified** (the `$ARGUMENTS` field was empty): Infer 2-3 possible career positioning directions from the project analyses, then present them to the user for selection.
-- **Target domain specified** (the user passed a domain via `$ARGUMENTS`): Validate the domain label, load any matching reference files, and proceed to Step 3 without inference.
+- **Target domain specified** (the user passed a domain via `$ARGUMENTS`): Record it as the confirmed domain, load any matching reference files (per Section 4), and proceed to Step 3 without inference.
 
 In either case, the end result of this step is a confirmed domain direction and (optionally) a loaded industry-terms reference file to inform Steps 3 and 4.
 
@@ -53,13 +53,20 @@ Project: data-cruncher
    | Dominant evidence pattern | Likely domain |
    |--------------------------|---------------|
    | Data pipeline terms, ETL, schema, orchestration, warehouse | Data Engineering |
-   | Model training, evaluation, feature engineering, experiment tracking | ML Engineering |
-   | Inference optimization, serving, model compression, latency | ML Infrastructure / MLOps |
+   | Metrics layers, BI dashboards, warehouse modeling, dbt-style transforms | Analytics Engineering / Data Analytics |
+   | Model training, evaluation, feature engineering, representation learning, experimentation | Machine Learning / AI |
+   | Inference optimization, serving, model compression, latency, training infrastructure | ML Systems / AI Infrastructure |
    | UI components, state management, accessibility, responsive design | Frontend Engineering |
+   | Wireframes, prototyping, design systems, usability research | Product Design / UX / UI |
    | API design, system architecture, database, microservices | Backend / Full-stack Engineering |
    | User research, metrics, A/B testing, roadmap, prioritization | Product Management |
    | CI/CD, infrastructure as code, monitoring, SRE | DevOps / Platform Engineering |
    | Technical writing, documentation systems, developer experience | Developer Relations / DevEx |
+   | Threat modeling, access control, vulnerability scanning, incident response | Security Engineering / AppSec |
+   | Papers, peer review, rebuttals, reproducibility, venue fit, camera-ready workflows | Academic / Scholarly Research |
+   | Distributed systems, storage, scheduling, cloud runtimes, fault tolerance | Systems / Distributed Systems |
+   | Query optimization, transactions, provenance, stream processing, indexing | Data Management / Database Systems |
+   | Routing, congestion control, traffic engineering, network measurement | Networking / Networked Systems |
 
    If the evidence does not cleanly map to any single domain, consider hybrid labels (e.g., "Full-stack Engineer with data focus" or "ML Engineer with strong backend skills").
 
@@ -143,30 +150,51 @@ After the domain is confirmed (whether inferred and selected, user-provided, or 
 ### 4.1 Find matching reference files
 
 1. Glob `${CLAUDE_SKILL_DIR}/references/industry-terms-*.md` to list all available reference files. (`${CLAUDE_SKILL_DIR}` resolves to the skill's installation directory at runtime.)
-2. The three built-in reference files are:
-   - `industry-terms-ml.md` -- Machine Learning, ML Engineering, MLOps
+2. The bundled reference files currently include:
+   - `industry-terms-ml.md` -- Machine Learning / AI
+   - `industry-terms-ml-systems.md` -- ML Systems / AI Infrastructure
    - `industry-terms-swe.md` -- Software Engineering, Backend, Frontend, Full-stack
+   - `industry-terms-systems.md` -- Systems / Distributed Systems
+   - `industry-terms-data.md` -- Data Engineering, Analytics Engineering, BI, Data Analytics
+   - `industry-terms-data-management.md` -- Data Management, Database Systems, Query Engines
+   - `industry-terms-networking.md` -- Networking, Networked Systems
    - `industry-terms-pm.md` -- Product Management, Program Management
-3. Match the confirmed domain to the most relevant built-in file:
-   - If the domain is ML-related (ML Engineer, Data Scientist, MLOps, AI Engineer, etc.) -> load `industry-terms-ml.md`
-   - If the domain is engineering-related (Backend, Frontend, Full-stack, Data Engineering, DevOps, Platform, etc.) -> load `industry-terms-swe.md`
-   - If the domain is product/program-related (Product Manager, TPM, etc.) -> load `industry-terms-pm.md`
+   - `industry-terms-design.md` -- Product Design, UX, UI, Service Design
+   - `industry-terms-devrel.md` -- Developer Relations, Developer Advocacy, Technical Writing, DevEx
+   - `industry-terms-security.md` -- Security Engineering, AppSec, IAM, SecOps
+   - `industry-terms-academic.md` -- Cross-domain academic writing, peer review, reproducibility
+3. Match the confirmed domain to the most relevant bundled file:
+   - If the domain is ML-related (ML Engineer, AI Engineer, Applied AI, Modeling, etc.) -> load `industry-terms-ml.md`
+   - If the domain is ML-systems-related (ML Systems, AI Infra, LLM Platform, Model Serving, Training Infra, MLSys, etc.) -> load `industry-terms-ml-systems.md`
+   - If the domain is data-related (Data Engineer, Analytics Engineer, BI Engineer, Data Analyst, etc.) -> load `industry-terms-data.md`
+   - If the domain is data-management-related (Database Systems, Data Management, Query Engine, Storage Engine, Data Systems, etc.) -> load `industry-terms-data-management.md`
+   - If the domain is engineering-related (Backend, Frontend, Full-stack, DevOps, Platform, SRE, etc.) -> load `industry-terms-swe.md`
+   - If the domain is systems-related (Distributed Systems, Storage Systems, Cloud Systems, Operating Systems, Runtime Systems, etc.) -> load `industry-terms-systems.md`
+   - If the domain is networking-related (Networking, Networked Systems, Traffic Engineering, Transport, SIGCOMM-style work, etc.) -> load `industry-terms-networking.md`
+   - If the domain is product/program-related (Product Manager, Growth PM, TPM, etc.) -> load `industry-terms-pm.md`
+   - If the domain is design-related (Product Designer, UX Designer, UI Designer, UX Researcher, etc.) -> load `industry-terms-design.md`
+   - If the domain is developer-relations-related (Developer Advocate, DevRel, Developer Educator, Technical Writer, DevEx, etc.) -> load `industry-terms-devrel.md`
+   - If the domain is security-related (Security Engineer, AppSec, IAM, SecOps, Security Analyst, etc.) -> load `industry-terms-security.md`
+   - If the work is explicitly academic, publication-oriented, or paper-centric (Research Scientist, PhD, paper submission, rebuttal, benchmark paper, etc.) -> also load `industry-terms-academic.md`
+   - If the domain is "Data Scientist" or another hybrid that spans modeling and analytics, load both `industry-terms-ml.md` and `industry-terms-data.md`
+   - If the domain is a hybrid direction such as "ML systems" or "applied database systems," load all relevant domain files rather than splitting by research vs engineering
+   - If the domain spans product, design, and engineering (for example, frontend product roles), load all relevant files
    - If the domain spans multiple areas, load all relevant files.
 4. If a matching file exists, read it. Its contents will be used in Steps 3 and 4 to ensure the narrative and copy use accurate, current industry terminology.
 5. If no matching file exists (e.g., the domain is niche or the reference files have not been created yet), proceed using Claude's own knowledge of the domain. Note this to the user: "No specific industry-terms reference file found for [domain]. I'll use my general knowledge of [domain] terminology."
 
 ### 4.2 Check for user-added reference files
 
-1. After loading built-in references, check if any additional `industry-terms-*.md` files exist that do NOT match the three built-in names (`ml`, `swe`, `pm`).
+1. After loading bundled references, check if any additional `industry-terms-*.md` files exist that do NOT match the bundled names (`ml`, `ml-systems`, `swe`, `systems`, `data`, `data-management`, `networking`, `pm`, `design`, `devrel`, `security`, `academic`).
 2. If user-added reference files are found, list them for the user:
    ```
    I also found these custom reference files:
-   - industry-terms-devrel.md
-   - industry-terms-data-science.md
+   - industry-terms-sales.md
+   - industry-terms-customer-success.md
 
    Would you like me to include any of these as well?
    ```
-3. If the user says yes (to one or more), read those files and include their terminology alongside the built-in references.
+3. If the user says yes (to one or more), read those files and include their terminology alongside the bundled references.
 4. If no user-added files are found, skip this sub-step silently.
 
 ### 4.3 What to do with loaded references

@@ -1,19 +1,11 @@
-# Project Analysis Template
-
-Use this format for each project analysis file written to `~/.career-spotlight/analyses/`.
-
-## Frontmatter
-
-```yaml
 ---
 analysis_version: 1
-source_path: [absolute path to original project file or directory]
+source_path: [absolute canonical path to original project file or directory]
 source_type: [code-repo | paper | document | mixed]
+user_priority: [highlight | supporting]
+analysis_lens: [product-engineering | systems | theory | ml | security | hci | pl | research-other | professional-communication]
 analyzed_date: [YYYY-MM-DD]
 ---
-```
-
-## Body
 
 # [Project Name]
 
@@ -33,5 +25,3 @@ analyzed_date: [YYYY-MM-DD]
 
 ## Transferable Pattern Tags
 #[tag1] #[tag2] #[tag3]
-
-> Before creating new tags, check existing analyses for semantically equivalent tags and reuse them.

@@ -36,8 +36,9 @@ Discover hidden strengths and career narratives from your past projects. Solves 
 
 **If `~/.career-spotlight/` DOES exist:**
 
-1. Glob `~/.career-spotlight/analyses/*.md` and count the files.
-2. Tell the user: "Found N existing project analyses. New projects will be analyzed incrementally."
+1. Verify subdirectories `analyses/`, `copies/`, `history/` exist. Recreate any that are missing.
+2. Glob `~/.career-spotlight/analyses/*.md` and count the files.
+3. Tell the user: "Found N existing project analyses. New projects will be analyzed incrementally."
 
 **Target domain:**
 
@@ -50,12 +51,17 @@ Discover hidden strengths and career narratives from your past projects. Solves 
 
 1. Ask the user for one or more project source paths (directories or files).
 2. If the user provides no paths, prompt again — at least one path is required.
-3. For each path: if it does not exist, warn the user, skip it, and continue with valid paths.
-4. Glob each valid path to scan its contents. **Skip:** binary files, `node_modules/`, `.git/`, `__pycache__/`, `venv/`, `.env`. If a project has >50 files, warn the user and ask whether to proceed or narrow scope.
-5. Check existing analyses in `~/.career-spotlight/analyses/` by matching the `source_path` field in their frontmatter. Only analyze projects that are new.
-6. If ALL provided projects are already analyzed, offer the user a choice: re-analyze them or skip ahead to Steps 2-4.
-7. For each new project, read `guides/project-analysis-guide.md` and follow its methodology.
-8. Write each analysis to `~/.career-spotlight/analyses/[slugified-name].md` using `templates/project-analysis.md` as the template.
+3. For each path: resolve it to an **absolute canonical path** (expand `~`, resolve `..`, follow symlinks) before any further processing. If the resolved path does not exist, warn the user and skip it. If ALL paths are invalid, tell the user and return to step 1 (re-prompt for paths).
+4. **After validating paths, ask the user to set project priorities for the valid paths only:**
+   - Which projects are **highlights** (重点) — these will receive the most narrative weight and prominence in all outputs.
+   - Which projects are **supporting** (次要) — these add breadth but are not the user's main story.
+   - Do NOT assume the most recent project is the most important. The user decides.
+   - Record each project's priority as `highlight` or `supporting` — this is stored in the analysis frontmatter and used throughout Steps 3-4.
+5. Glob each valid path to scan its contents. **Skip:** binary files, `node_modules/`, `.git/`, `__pycache__/`, `venv/`, `.env`. If a project has >50 files, warn the user and ask whether to proceed or narrow scope.
+6. Check existing analyses in `~/.career-spotlight/analyses/` by matching the `source_path` field in their frontmatter against the resolved canonical paths. Only analyze projects that are new.
+7. If ALL provided projects are already analyzed, offer the user a choice: re-analyze them or skip ahead to Steps 2-4.
+8. For each new project, read `guides/project-analysis-guide.md` and follow its methodology. The guide adapts analysis lens based on input type (research paper vs code repo vs document) and sub-field.
+9. Write each analysis to `~/.career-spotlight/analyses/[slugified-name].md` using `templates/project-analysis.md` as the template.
 
 **Naming rules:**
 
@@ -69,15 +75,15 @@ Discover hidden strengths and career narratives from your past projects. Solves 
 
 **If target domain was set via `$ARGUMENTS`:**
 
-1. Check for `references/industry-terms-[domain].md`. Load it if it exists.
+1. Read `guides/domain-positioning-guide.md` Section 4 ("Loading References") and follow its methodology to load matching industry-terms reference files for the specified domain. Do NOT simply concatenate the domain string into a filename — use the semantic matching logic in the guide.
 2. Proceed directly to Step 3.
 
 **If target domain is unset:**
 
-1. Read `guides/domain-positioning-guide.md` and follow its methodology.
+1. Read `guides/domain-positioning-guide.md` and follow its full methodology (Sections 2-4).
 2. Present 2-3 candidate positioning directions to the user.
 3. Wait for the user to select one.
-4. Check for a matching `references/industry-terms-[domain].md` and load it if available.
+4. Load references per Section 4 of the guide.
 
 ---
 
@@ -94,7 +100,7 @@ Discover hidden strengths and career narratives from your past projects. Solves 
 
 1. Read `~/.career-spotlight/report.md`.
 2. Read `guides/copywriting-guide.md` and follow its methodology.
-3. If any files exist in `~/.career-spotlight/copies/`, archive each to `~/.career-spotlight/history/` with a `YYYY-MM-DDTHH-MM-SS` timestamp prefix.
+3. If any files exist in `~/.career-spotlight/copies/`, archive each to `~/.career-spotlight/history/` with a timestamp suffix: `[original-name]-YYYY-MM-DDTHH-MM-SS.md` (e.g., `resume-bullets-2026-03-24T10-30-00.md`).
 4. Write four files to `~/.career-spotlight/copies/` using `templates/copywriting-variants.md` as the template:
    - `resume-bullets.md`
    - `elevator-pitch.md`

@@ -1,36 +1,40 @@
-# Copywriting Variants Template
-
-Use this format for copy files written to `~/.career-spotlight/copies/`.
-
 ## Resume Bullets (resume-bullets.md)
 
-8-15 bullet points. Each follows: **Action verb + Object + Quantified result**.
-Grouped by theme line. Main line first.
+---
+generated: [YYYY-MM-DDTHH:MM:SS]
+source_report: ~/.career-spotlight/report.md
+privacy: [generalized | user-approved-real-names]
+---
 
-Example:
-- Designed and deployed a real-time data pipeline processing 10TB/day, reducing query latency by 60%
-- Led cross-team migration of legacy logging system to ELK stack, serving 3 engineering teams
+- [Action verb] + [Object] + [Quantified result]
+- [Action verb] + [Object] + [Quantified result]
 
 ## Elevator Pitch (elevator-pitch.md)
 
-80-120 words. Spoken tone. Structure:
-[Who I am] + [Main strength (main theme line)] + [One concrete proof point] + [Differentiator (supporting theme line)]
+---
+generated: [YYYY-MM-DDTHH:MM:SS]
+source_report: ~/.career-spotlight/report.md
+privacy: [generalized | user-approved-real-names]
+---
+
+[80-120 words. Spoken tone. Who I am + Main strength + One proof point + Differentiator.]
 
 ## LinkedIn Summary (linkedin-summary.md)
 
-150-300 words. Professional but not stiff. Structure:
-- Opening: positioning statement
-- Body: main + supporting theme lines with concrete examples
-- Close: what you're looking for or passionate about
-- Include industry keywords naturally for LinkedIn search visibility.
+---
+generated: [YYYY-MM-DDTHH:MM:SS]
+source_report: ~/.career-spotlight/report.md
+privacy: [generalized | user-approved-real-names]
+---
+
+[150-300 words. Opening: positioning statement. Body: main + supporting themes with examples. Close: what excites you / what you're looking for. Keywords embedded naturally.]
 
 ## Casual Intro (casual-intro.md)
 
-2-3 sentences. No jargon. Structure:
-[What I do in plain terms] + [What makes it interesting] + [Conversational hook]
-
+---
+generated: [YYYY-MM-DDTHH:MM:SS]
+source_report: ~/.career-spotlight/report.md
+privacy: [generalized | user-approved-real-names]
 ---
 
-**Privacy:** Default to generalized descriptions for company names and proprietary details unless user explicitly approves specifics.
-
-**Language:** Default English. If user requests another language, generate that version as an additional section.
+[2-3 sentences. No jargon. What I do + What makes it interesting + Conversational hook.]

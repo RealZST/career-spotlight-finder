@@ -63,3 +63,18 @@
 | "resolved conflicting priorities" | Priority Conflict Resolution / Negotiation |
 | "kept leadership informed" | Status Reporting / Executive Updates |
 | "brought eng and design together" | Cross-functional Facilitation / Design-Eng Alignment |
+
+## Growth & Lifecycle
+
+| User's description | Industry term |
+|---|---|
+| "found the one metric that matters most" | North Star Metric |
+| "looked at the job users were really hiring the product for" | Jobs to Be Done (JTBD) |
+| "measured how fast users reached first value" | Activation Metrics / Time-to-Value |
+| "tested with a small user group before wider launch" | Beta Program / Early Access Program |
+| "looked for signs users truly needed the product" | Product-Market Fit Validation |
+| "prioritized by expected business outcome, not just requests" | Outcome-driven Prioritization |
+| "tracked early signals before revenue or retention moved" | Leading Indicator Framework |
+| "managed the full journey from signup to expansion" | Lifecycle Product Management / Journey-based Optimization |
+| "worked backward from business goals to feature bets" | Goal-aligned Roadmapping / Outcome-based Roadmap |
+| "identified the point where users first understood the value" | Activation Funnel / Aha Moment Definition |

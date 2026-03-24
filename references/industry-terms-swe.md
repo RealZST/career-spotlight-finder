@@ -1,6 +1,6 @@
 # Industry Terms: Software Engineering
 
-> **Usage note:** This is a supplementary reference for terms practitioners commonly *do* but rarely *name*. Claude already knows mainstream SWE terminology. Use this file to catch colloquial or informal descriptions and map them to the recognized industry terms that belong on a resume or portfolio.
+> **Usage note:** This file is for software engineering in the product/backend/frontend/full-stack sense. Claude already knows mainstream SWE terminology. Use this file to catch colloquial or informal descriptions and map them to the recognized industry terms that belong on a resume or portfolio. If the user's work is more about distributed systems, storage systems, runtimes, or computer systems as a field, use the systems file instead.
 
 ---
 
@@ -63,3 +63,18 @@
 | "broke down big projects into tasks" | Technical Decomposition / Work Breakdown Structure |
 | "wrote RFCs or design docs" | Technical Design Document / RFC Process |
 | "led a post-mortem after an outage" | Incident Post-mortem / Blameless Retrospective |
+
+## Reliability & Platform Engineering
+
+| User's description | Industry term |
+|---|---|
+| "defined uptime or latency goals" | SLI / SLO / SLA Management |
+| "balanced shipping speed with stability" | Error Budget Policy / Reliability Engineering |
+| "built an internal paved road for teams" | Internal Developer Platform (IDP) / Golden Path |
+| "tracked delivery speed and deploy stability" | DORA Metrics |
+| "kept one noisy service from hurting everyone else" | Multi-tenant Isolation / Resource Quotas |
+| "moved logic closer to users" | Edge Computing / Edge Runtime |
+| "changed database schema without downtime" | Zero-downtime Migration / Online Schema Change |
+| "moved slow work off the request path" | Asynchronous Processing / Queue Offloading |
+| "limited failures to a smaller blast radius" | Bulkhead Pattern / Blast-radius Reduction |
+| "planned recovery before incidents happened" | Disaster Recovery / Resilience Planning |
