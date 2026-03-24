@@ -11,11 +11,17 @@ Discover hidden strengths, market-facing positioning, and a coherent career narr
 
 ## Usage
 
-```bash
-/career-spotlight-finder
-```
+Mention the skill by name in a normal prompt and describe what you want analyzed.
 
-The skill infers 2–3 plausible directions during positioning, recommends one expert-facing center, and confirms the framing with the user in the workflow. There is no need to pass a target domain up front.
+Examples:
+
+- `Use the career-spotlight-finder skill to analyze these projects and help me find my career positioning.`
+- `Use career-spotlight-finder on these papers and repos, then generate resume bullets and a LinkedIn summary.`
+
+You can also invoke it directly in different coding agents:
+
+- **Codex**: `$career-spotlight-finder`
+- **Claude Code**: `/career-spotlight-finder`
 
 ## What It Does
 
