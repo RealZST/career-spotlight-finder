@@ -1,6 +1,6 @@
 # Industry Terms: Developer Relations / DevEx
 
-> **Usage note:** This is a supplementary reference for terms practitioners commonly *do* but rarely *name*. Claude already knows mainstream DevRel terminology. Use this file to catch colloquial or informal descriptions and map them to the recognized industry terms that belong on a resume or portfolio.
+> **Usage note:** This is a supplementary reference for terms practitioners commonly *do* but rarely *name*. Use this file to catch colloquial or informal descriptions and map them to the recognized industry terms that belong on a resume or portfolio.
 
 ---
 

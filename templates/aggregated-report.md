@@ -39,8 +39,3 @@
 
 ## Cross-Theme Capabilities
 [Capabilities appearing across multiple theme lines — e.g., systems thinking, from-zero-to-one delivery]
-
-## Blind Spots
-Top 3-5 capabilities commonly expected in [target domain] at [inferred seniority] level, not evidenced in projects:
-1. [Capability] — [why it matters in this domain]
-2. [Capability] — [why it matters]

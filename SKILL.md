@@ -69,7 +69,7 @@ Discover hidden strengths and career narratives from your past projects. Solves 
 1. Read `guides/domain-positioning-guide.md` and follow its full methodology (Sections 2-4).
 2. Infer 2-3 candidate positioning directions, then recommend one framing to lead with. This may be a conventional `Primary Expert Framing` or a `Bridge Expert Framing` when adjacent directions are all strongly supported and the combination is itself the user's advantage.
 3. Present the recommendation first, including a short `Distinctiveness Thesis` that explains why the user stands out. Keep other directions as `Alternative Wrappers`, not competing identities.
-4. If the user expresses a clear preference for a different wrapper or target direction, use that as the confirmed framing. Otherwise, continue with the recommended framing. Do NOT force a narrow job-title label when a bridge framing better matches the evidence.
+4. Ask the user to confirm the recommended framing before proceeding. If they want a different wrapper or target direction, use that as the confirmed framing. Do NOT force a narrow job-title label when a bridge framing better matches the evidence, but do require an explicit confirmation or override before moving to Step 3.
 5. Load references per Section 4 of the guide.
 
 ---
@@ -103,7 +103,6 @@ Present a summary to the user:
 - One-sentence positioning statement
 - Number of theme lines identified
 - Top 3 hidden capabilities discovered
-- Top blind spots flagged
 
 Then ask:
 

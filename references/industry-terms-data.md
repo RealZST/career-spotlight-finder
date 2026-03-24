@@ -1,6 +1,6 @@
 # Industry Terms: Data / Analytics
 
-> **Usage note:** This file is for data engineering, analytics engineering, BI, and analytics-facing data work. Claude already knows mainstream data terminology. Use this file to catch colloquial or informal descriptions and map them to the recognized industry terms that belong on a resume or portfolio. If the user's work is more about query engines, transactions, indexing, or database internals, use the data management file instead.
+> **Usage note:** This file is for data engineering, analytics engineering, BI, and analytics-facing data work. Use this file to catch colloquial or informal descriptions and map them to the recognized industry terms that belong on a resume or portfolio. If the user's work is more about query engines, transactions, indexing, or database internals, use the data management file instead.
 
 ---
 

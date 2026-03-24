@@ -43,6 +43,27 @@ The report is analytical. The copy is personal. Every sentence must cross that b
 - If the user's background spans adjacent directions, keep one credible center of gravity **without erasing the second strength that makes them memorable**.
 - Never undercut the positioning with disclaimers such as "I'm not really an expert in X," "I'm not a pure specialist," or "I kind of do several things." The point of this step is to package the user's work into a confident, defensible expert story.
 
+### Competitive wording and defensibility
+
+- Default to **competitive mode**, not modest mode, for `resume-bullets.md` and `linkedin-summary.md`. These outputs should sound like a strong candidate competing in a crowded market.
+- When several phrasings are all defensible, prefer the one with **higher signal, stronger market recognition, and more senior-feeling language**.
+- It is acceptable to raise the level of abstraction by one step if that better captures the real value of the work:
+  - "script" -> "workflow" or "pipeline"
+  - "feature" -> "system capability"
+  - "research" -> "algorithm design" or "method development"
+  - "tool" -> "engineering workflow" or "platform layer" **only if the evidence supports it**
+- Do **not** invent scale, ownership, leadership, production usage, or adoption. Competitive wording is allowed; fabricated claims are not.
+- Use the **two-layer interview test**: if a hiring manager asked "what do you mean by that?" twice in a row, could the user still defend the wording with the underlying project? If not, the phrasing is too aggressive.
+
+### Output register
+
+Use different aggression levels for different outputs:
+
+- **Resume bullets** — highest signal, most compressed, most prestige-oriented wording
+- **LinkedIn summary** — polished and market-facing, still more elevated than conversational speech
+- **Elevator pitch** — clear and memorable, moderately technical, less compressed
+- **Casual intro** — simplest and least jargon-heavy; do not force prestige wording here
+
 ### Bridge profiles
 
 When the report uses a bridge framing, the copy should preserve the combination as part of the selling point.
@@ -77,10 +98,24 @@ Examples:
 
 Group bullets by theme line. Main theme line bullets come first, then supporting, then supplementary. Add a heading for each group using the theme line name.
 
+Heading names should be market-legible and clearly distinct from each other. Do not use overlapping headings that sound like variants of the same bucket. For example, prefer:
+
+- `Distributed RL Systems and Post-Training Infrastructure`
+- `Applied Reinforcement Learning Algorithms`
+- `AI-native Product Engineering`
+
+over weaker pairings like:
+
+- `Reinforcement Learning Systems`
+- `Reinforcement Learning Research`
+
 ### Preferred verbs
 
 Use these when they fit the situation accurately:
 - Designed, Built, Led, Optimized, Deployed, Architected, Migrated, Automated, Reduced, Increased
+
+When defensible, also consider stronger high-signal verbs such as:
+- Engineered, Orchestrated, Directed, Spearheaded, Scaled, Reframed, Operationalized
 
 ### Verbs to avoid
 
@@ -140,6 +175,7 @@ For bridge profiles, this alternative formula often works better:
 - 150-300 words.
 - Professional but not stiff. Write as if addressing a respected colleague, not a dissertation committee.
 - Naturally embed industry keywords throughout. LinkedIn search matches on these terms, so they affect discoverability. Pull keywords from the report's Term Mapping Table.
+- This is a market-facing surface. It should sound stronger and more polished than casual conversation, and it may use higher-signal terminology as long as every claim stays defensible.
 
 ### Structure
 
@@ -164,6 +200,8 @@ If the user is a bridge profile, the body should make the progression or combina
 Do not dump a keyword list at the bottom. Instead, weave terms naturally:
 - **Bad:** "Skills: Python, Kafka, AWS, Terraform, Kubernetes, CI/CD, microservices"
 - **Good:** "I've spent the last three years building event-driven pipelines on Kafka and AWS, with Terraform managing the infrastructure and Kubernetes keeping it portable."
+
+When several terms are all accurate, prefer the term a hiring manager is more likely to recognize as high-value. The goal is not to sound inflated; it is to avoid underselling strong work with flat wording.
 
 ---
 

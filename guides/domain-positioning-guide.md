@@ -90,6 +90,12 @@ Project: data-cruncher
    - **Narrative fit**: best match for the actual connective logic across the user's work
    - **Market clarity**: easiest framing for a hiring manager or recruiter to recognize quickly, without flattening the truth
 
+Before using market considerations, apply this rule:
+
+   - **Evidence floor first**: Do not move the user into a hotter or more valuable market lane unless the underlying projects genuinely support that framing.
+   - **Market upside as tie-breaker**: If two framings are both truthful and defensible, prefer the one with higher market value, stronger recruiter recognition, or broader opportunity density.
+   - **Do not erase the credibility base**: If the recommended framing leans toward a more marketable adjacent lane, preserve the earlier or deeper line of work as the user's credibility base rather than pretending they came from somewhere else.
+
 8. Determine whether the recommendation should be a **specialist framing** or a **bridge framing**:
 
    - **Use a specialist framing** when one direction clearly dominates and the others are mostly supporting add-ons.
@@ -169,19 +175,20 @@ Based on your project analyses, I recommend centering your story on:
 - **[Label]** — [best when targeting what kind of opportunity]
 - **[Label]** — [best when targeting what kind of opportunity]
 
-If you do not have a strong preference, I'll continue with this center and keep the other wrappers in reserve.
-If you want to optimize for a different opportunity, I can switch the lead wrapper without losing the underlying story.
+This is the lead framing I recommend based on the evidence.
+Does this work as the main direction, or would you like me to use one of the alternative wrappers instead?
 ```
 
 Rules for this interaction:
 
 - Lead with a recommendation. The user came for synthesis, not to be handed the classification problem again.
 - If the user says multiple directions fit, or says they are unsure, **do not** bounce the choice back to them. Treat that as a signal to prefer a bridge framing unless the evidence clearly says otherwise.
+- Even when the recommendation is strong, ask for confirmation before proceeding to Step 3. The interaction should be "here is my recommended lead and why" followed by a short confirmation question, not silent auto-selection.
 - If the user wants a different lead angle, switch to that framing and record it as the confirmed framing.
 - If the user asks for clarification about a direction, explain which evidence supports it, what kinds of roles it maps to, and whether it works better as the expert center or as an alternative wrapper.
 - Never frame the user as "not really an expert," "not a pure specialist," or "better off not positioning as an expert." The job is to find the most credible expert entry point and explain why this person is special within it.
 - Do not over-optimize for a narrow, conventional job-title label when it makes the user less truthful or less memorable.
-- Once the framing is confirmed (either explicitly or by lack of objection), record it as the confirmed framing for the rest of the pipeline.
+- Once the framing is confirmed explicitly by the user (either by accepting the recommendation or asking for an override), record it as the confirmed framing for the rest of the pipeline.
 
 ---
 
@@ -191,7 +198,7 @@ After the framing is confirmed (whether recommended or user-overridden), attempt
 
 ### 4.1 Find matching reference files
 
-1. Glob `${CLAUDE_SKILL_DIR}/references/industry-terms-*.md` to list all available reference files. (`${CLAUDE_SKILL_DIR}` resolves to the skill's installation directory at runtime.)
+1. Glob the current skill directory's `references/industry-terms-*.md` files to list all available reference files. Resolve the path relative to this skill's installation directory at runtime.
 2. The bundled reference files currently include:
    - `industry-terms-ml.md` -- Machine Learning / AI
    - `industry-terms-ai-infra.md` -- AI Infrastructure, ML Platform, Training/Serving Infrastructure
@@ -226,7 +233,7 @@ After the framing is confirmed (whether recommended or user-overridden), attempt
 	   - If the framing is a bridge framing, load the lead domain file plus the files needed to support the distinctiveness thesis.
 	   - If an alternative wrapper materially shapes the narrative or copy, load its reference file too. Do not load extra files that are only weakly related.
 4. If a matching file exists, read it. Its contents will be used in Steps 3 and 4 to ensure the narrative and copy use accurate, current industry terminology.
-5. If no matching file exists (e.g., the domain is niche or the reference files have not been created yet), proceed using Claude's own knowledge of the domain. Note this to the user: "No specific industry-terms reference file found for [domain]. I'll use my general knowledge of [domain] terminology."
+5. If no matching file exists (e.g., the domain is niche or the reference files have not been created yet), proceed using general domain knowledge. Note this to the user: "No specific industry-terms reference file found for [domain]. I'll use general [domain] terminology."
 
 ### 4.2 Check for user-added reference files
 

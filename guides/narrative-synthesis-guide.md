@@ -278,6 +278,7 @@ Guidelines:
 - Start with a professional identity, not a task description.
 - Reference the arc from origin to peak.
 - Use target-domain terminology.
+- When multiple labels are possible, prefer the one that is slightly more senior, specific, or market-legible **as long as it remains clearly defensible from the underlying projects**.
 
 Example: "A data engineer who has progressed from ad-hoc data collection to designing production-grade, real-time data infrastructure at scale."
 
@@ -355,17 +356,25 @@ Value: In [target domain], this translates to the ability to own entire feature 
 
 ---
 
-## 8. Blind Spots
+## 8. Optional: Positioning Risks (Only if the User Asks)
 
-Based on the target domain and the user's inferred seniority level, identify the top **3-5 capabilities** that are commonly expected but **not evidenced** in any of the analyzed projects.
+This skill does **not** surface gap analysis by default. The default output should stay focused on the user's strengths, distinctiveness, and strongest story.
+
+Only generate this section if the user explicitly asks questions such as:
+
+- "What am I missing for this direction?"
+- "What are the risks in this positioning?"
+- "What gaps should I close next?"
+
+If the user explicitly asks for that analysis, identify the top **3-5 capabilities** that are commonly expected but **not evidenced** in any of the analyzed projects.
 
 ### How to Identify
 
 1. Consider what the target domain typically requires at the user's seniority level. Seniority is inferred from the complexity, scope, and leadership signals in the analyzed projects.
 2. Compare those expectations against the full set of capabilities evidenced across all analyses.
-3. The gap = blind spots.
+3. The gap = optional positioning risks.
 
-### What to Include for Each Blind Spot
+### What to Include for Each Positioning Risk
 
 For each identified blind spot, provide:
 
@@ -392,9 +401,9 @@ For each identified blind spot, provide:
 
 ### Guidelines
 
-- Be honest but not discouraging. Frame blind spots as areas to address, not deficiencies.
+- Be honest but not discouraging. Frame these as positioning risks or missing signals, not as personal deficiencies.
 - Always include the note that the gap may be due to project selection, not actual missing capability.
-- Limit to 3-5. More than 5 blind spots becomes overwhelming and unhelpful.
+- Limit to 3-5. More than 5 becomes overwhelming and unhelpful.
 
 ---
 
@@ -421,6 +430,17 @@ Write `~/.career-spotlight/report.md` using `templates/aggregated-report.md` as 
    - Read like one coherent expert story, not like three competing labels jammed together.
 3. **Term Mapping Table** — the consolidated table from Step 3d.
 4. **Theme Lines / Thread Chapters** — structure depends on the narrative decision from Section 4:
+
+   Theme-line and chapter names should be **orthogonal and high-signal**:
+
+   - Each heading should describe a clearly different selling point, not a vague variation of the same lane.
+   - Avoid overlapping labels such as "Reinforcement Learning Systems" and "Reinforcement Learning Research" when a more precise pair exists.
+   - Prefer market-recognized, more specific headings such as:
+     - `Distributed RL Systems and Post-Training Infrastructure`
+     - `Applied Reinforcement Learning Algorithms for Autonomous Systems`
+     - `AI-native Product Engineering`
+   - If two headings still feel interchangeable after you write them, they are not separated enough yet.
+   - When multiple defensible labels exist, prefer the one with higher signal and clearer hiring-market meaning.
 
    **If unified thread narrative (Option 1),** replace the template's independent theme line sections with this structure:
 
@@ -449,7 +469,7 @@ Write `~/.career-spotlight/report.md` using `templates/aggregated-report.md` as 
    **If progressive or parallel narrative (Options 2-3),** use the template structure as-is — independent theme lines ranked main / supporting / supplementary.
 
 5. **Cross-Theme Capabilities** — from Section 7.
-6. **Blind Spots** — from Section 8.
+6. **Optional positioning risks** — only include if the user explicitly asked for gap analysis in Section 8.
 
 ### Quality Checklist
 
@@ -459,8 +479,8 @@ Before finalizing the report, verify:
 - [ ] The positioning statement is specific and defensible (every claim is backed by a project).
 - [ ] The opening sections explain not only what bucket the user fits into, but why they are distinctive within it.
 - [ ] Term mappings are consistent — the same capability is not called different things in different theme lines.
+- [ ] Theme-line or chapter headings are high-signal, market-legible, and clearly distinct from one another.
 - [ ] Narrative arcs show genuine progression, not invented progression. If growth is limited, say so honestly.
-- [ ] Blind spots reference the specific target domain, not generic career advice.
 - [ ] The report uses target-domain terminology throughout, not the user's original colloquial descriptions.
 - [ ] If an overarching thread was discovered (Step 3a½), the report uses the unified thread narrative — theme lines are presented as connected chapters, not independent clusters.
 - [ ] Thread transitions are grounded in evidence from project analyses (Problem & Motivation, Research Trajectory), not fabricated.
@@ -478,5 +498,5 @@ Before finalizing the report, verify:
 | 3c | Build narrative arcs | Origin -> Growth -> Peak -> Positioning for each theme line (or thread chapter) |
 | 3d | Refine and consolidate terminology | Consolidated term mapping table |
 | 3e | Identify cross-theme capabilities | List of career-spanning differentiators |
-| 3f | Identify blind spots | 3-5 expected-but-missing capabilities |
+| 3f | Optional positioning risks | Only if user asks for gap analysis |
 | 3g | Write report | `~/.career-spotlight/report.md` |

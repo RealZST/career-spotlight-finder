@@ -1,6 +1,6 @@
 # Industry Terms: Software Engineering
 
-> **Usage note:** This file is for software engineering in the product/backend/frontend/full-stack sense. Claude already knows mainstream SWE terminology. Use this file to catch colloquial or informal descriptions and map them to the recognized industry terms that belong on a resume or portfolio. If the user's work is more about distributed systems, storage systems, runtimes, or computer systems as a field, use the systems file instead.
+> **Usage note:** This file is for software engineering in the product/backend/frontend/full-stack sense. Use this file to catch colloquial or informal descriptions and map them to the recognized industry terms that belong on a resume or portfolio. If the user's work is more about distributed systems, storage systems, runtimes, or computer systems as a field, use the systems file instead.
 
 ---
 

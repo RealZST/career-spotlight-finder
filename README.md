@@ -85,7 +85,6 @@ Add `industry-terms-[your-domain].md` to the `references/` directory inside this
   - distinctiveness thesis
   - theme lines or thread chapters
   - cross-theme capabilities
-  - blind spots
 - **Four copy variants**:
   - `resume-bullets.md`
   - `elevator-pitch.md`

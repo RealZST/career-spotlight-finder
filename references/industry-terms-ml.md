@@ -1,6 +1,6 @@
 # Industry Terms: Machine Learning / AI
 
-> **Usage note:** This file is for the machine learning / AI domain broadly, including model development, evaluation, algorithmic work, and applied model-building. Claude already knows mainstream ML terminology. Use it to catch colloquial or informal descriptions and map them to the recognized industry terms that belong on a resume or portfolio. If the user's story is more about training infrastructure, serving, or AI platform work, pair this with the ML systems reference.
+> **Usage note:** This file is for the machine learning / AI domain broadly, including model development, evaluation, algorithmic work, and applied model-building. Use it to catch colloquial or informal descriptions and map them to the recognized industry terms that belong on a resume or portfolio. If the user's story is more about training infrastructure, serving, or AI platform work, pair this with the AI infrastructure reference.
 
 ---
 
