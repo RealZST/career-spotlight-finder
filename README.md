@@ -63,7 +63,7 @@ All output is local only, not synced anywhere.
 
 ## Incremental Updates
 
-Run the skill again with new projects. Only new projects are analyzed. The report and copies regenerate from the full analysis set, and existing project priorities can be updated without full re-analysis.
+Run the skill again with new or existing projects. New projects are analyzed from scratch. Previously analyzed projects are checked for staleness — local sources are re-analyzed if the content has changed (via git commit hash or file mtime), URL sources are flagged if the analysis is older than 7 days, and outdated analysis versions are automatically detected. Project priorities can be updated without full re-analysis. The report and copies regenerate from the full analysis set.
 
 ## Adding Custom Term References
 
@@ -75,6 +75,8 @@ Add `industry-terms-[your-domain].md` to the `references/` directory inside this
 - **Research papers** — PDF / LaTeX-style paper analysis with research-trajectory extraction
 - **Documents** — design docs, reports, specs, and other narrative materials
 - **Local files and directories** — common text/code formats plus PDF
+- **Word documents (.docx)** — converted via pandoc or python-docx, then analyzed as documents
+- **URLs** — web pages, blog posts, online articles, and project pages fetched via WebFetch
 
 ## Main Outputs
 

@@ -1,7 +1,9 @@
 ---
 analysis_version: 1
-source_path: [absolute canonical path to original project file or directory]
-source_type: [code-repo | paper | document | mixed]
+source_path: [absolute canonical path to original project file or directory — omit for URL sources]
+source_url: [full URL — only for URL sources, omit for local files]
+source_fingerprint: [git commit hash for repos, file mtime epoch for single files, newest file mtime for non-git dirs — omit for URL sources]
+source_type: [code-repo | paper | document | mixed | web-article | web-project | web-other]
 user_priority: [highlight | supporting]
 analysis_lens: [product-engineering | systems | theory | ml | security | hci | pl | research-other | professional-communication]
 analyzed_date: [YYYY-MM-DD]

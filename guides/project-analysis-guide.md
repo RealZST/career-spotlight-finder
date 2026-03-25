@@ -46,6 +46,27 @@ If you see these signals, read only the relevant subsection of Methods — not t
 - For LaTeX: read the main .tex file, locate the Abstract/Introduction/Conclusion sections. Only follow `\input` or `\include` for those sections.
 - **Identify the research sub-field** from the venue, keywords, or contribution framing — this determines the analysis lens (see "Analysis Lens by Input Type" section below).
 
+### URL / Web Page
+
+When the source is a URL, the content has already been fetched by WebFetch in Step 1.
+
+1. Identify the page type: blog post, project page, portfolio, documentation, online article, etc.
+2. Focus on the main content — ignore navigation, sidebars, footers, cookie banners, and boilerplate HTML.
+3. If the page is a blog post or article, treat it like a **Document / Report** (see below).
+4. If the page is a project page (e.g., GitHub repo page, product landing page), treat it like a **Code Repository** README — extract purpose, tech stack, and impact signals.
+5. If the fetched content is mostly empty, broken, or paywalled, inform the user and skip it.
+
+**Frontmatter:** Use `source_url: [full URL]` instead of `source_path`. Set `source_type` to `web-article`, `web-project`, or `web-other` as appropriate.
+
+### Word Document (docx)
+
+The docx has already been converted to text/markdown in Step 1.
+
+1. Treat the converted text the same as a **Document / Report** (see below).
+2. If conversion produced garbled or incomplete output, inform the user and suggest re-exporting the document as PDF.
+
+**Frontmatter:** Use `source_path` pointing to the original `.docx` file.
+
 ### Document / Report
 
 1. If the document is short (under ~200 lines), read it in full.
@@ -351,8 +372,10 @@ Use `templates/project-analysis.md` as the output format. Every analysis file mu
 ```yaml
 ---
 analysis_version: 1
-source_path: /absolute/canonical/path/to/project
-source_type: code-repo | paper | document | mixed
+source_path: /absolute/canonical/path/to/project   # omit for URL sources
+source_url: https://example.com/article             # only for URL sources, omit for local files
+source_fingerprint: abc123def                         # git HEAD hash for repos, file mtime for files, newest mtime for non-git dirs — omit for URL sources
+source_type: code-repo | paper | document | mixed | web-article | web-project | web-other
 user_priority: highlight | supporting
 analysis_lens: product-engineering | systems | theory | ml | security | hci | pl | research-other | professional-communication
 analyzed_date: YYYY-MM-DD

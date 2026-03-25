@@ -17,8 +17,12 @@
 |-------------|---------------------------|---------------|
 | [colloquial description] | [industry term] | [project name] |
 
+<!-- Use ONE of the two structures below, then delete the other. -->
+
+<!-- OPTION A: Thread narrative — when projects form a progressive arc -->
+
 ## Overarching Thread: [Thread Name]
-[1-2 paragraphs connecting the user's work into one unified story. If no thread exists, replace this section with direct Theme Line headings.]
+[1-2 paragraphs connecting the user's work into one unified story.]
 
 ### Chapter 1: [Name] (Main)
 ### Narrative Arc
@@ -34,8 +38,28 @@
 ### Chapter 2: [Name]
 [Same structure as Chapter 1; omit `Transition` on the final chapter.]
 
-## Supporting Line: [Name]
-[Use when a secondary strength sharpens the main story without competing with it.]
+## Supplementary: [Name]
+[For projects outside the thread, if any — use standard theme line structure below.]
+
+<!-- OPTION B: Independent theme lines — when projects don't form a single arc -->
+
+## Main Theme Line: [Name]
+### Narrative Arc
+- **Origin:** [earliest project] — [what it established]
+- **Growth:** [subsequent projects] — [how capability deepened]
+- **Peak:** [strongest project] — [most impressive demonstration]
+- **Positioning:** [what this line says about who you are]
+### Key Projects
+- [Project] ★: [one-line highlight]
+- [Project]: [one-line highlight]
+
+## Supporting Theme Line: [Name]
+[Same structure — a secondary strength that sharpens the main story without competing with it.]
+
+## Supplementary: [Name]
+[For projects that add breadth but don't warrant a full theme line. Brief summary only.]
+
+<!-- End of options -->
 
 ## Cross-Theme Capabilities
 [Capabilities appearing across multiple theme lines — e.g., systems thinking, from-zero-to-one delivery]
