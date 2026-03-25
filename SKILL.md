@@ -1,6 +1,12 @@
 ---
 name: career-spotlight-finder
+version: 1.0.0
 description: Use when wanting to discover hidden strengths, industry buzzwords, and career narratives from past projects, articles, or code — for resumes, self-introductions, and personal branding
+metadata:
+  openclaw:
+    requires:
+      anyBins: [pandoc]
+    homepage: https://github.com/RealZST/career-spotlight-finder
 allowed-tools:
   - Read
   - Write
