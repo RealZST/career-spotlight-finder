@@ -27,12 +27,22 @@ npx skills add RealZST/career-spotlight-finder
 clawhub install career-spotlight-finder
 ```
 
-**Manual (Claude Code):**
+**Manual:**
 
-Clone into your skills directory:
+Clone into the skills directory for your agent:
 
 ```bash
+# Claude Code
 git clone https://github.com/RealZST/career-spotlight-finder.git ~/.claude/skills/career-spotlight-finder
+
+# Codex
+git clone https://github.com/RealZST/career-spotlight-finder.git ~/.codex/skills/career-spotlight-finder
+
+# Gemini CLI
+git clone https://github.com/RealZST/career-spotlight-finder.git ~/.gemini/skills/career-spotlight-finder
+
+# Cursor / Windsurf / other agents
+# Clone into the agent's skill directory, or use `npx skills add` with the --agent flag
 ```
 
 ## Quick Start
