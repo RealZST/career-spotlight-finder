@@ -66,8 +66,8 @@ Discover hidden strengths and career narratives from your past projects. Solves 
 
    When a collection is detected, tell the user: "This directory looks like a collection of N independent documents rather than a single project. I'll analyze each one separately." The user can override this if they want a combined analysis.
 5. **After validating and expanding sources, ask the user to set project priorities for the final source list:**
-   - Which projects are **highlights** (重点) — these will receive the most narrative weight and prominence in all outputs.
-   - Which projects are **supporting** (次要) — these add breadth but are not the user's main story.
+   - Which projects are **highlights** — these will receive the most narrative weight and prominence in all outputs.
+   - Which projects are **supporting** — these add breadth but are not the user's main story.
    - Do NOT assume the most recent project is the most important. The user decides.
    - Record each project's priority as `highlight` or `supporting` — this is stored in the analysis frontmatter and used throughout Steps 3-4.
 6. If more than 8 projects are queued for analysis, gently recommend focusing on 5-8 projects that best represent the target direction. Explain that narrative quality is highest in this range — too many projects can dilute themes and stretch context. Suggest setting less central projects to `supporting` priority, or running the skill again later with a different subset. Do NOT enforce a hard limit; proceed if the user wants to continue with all projects.
