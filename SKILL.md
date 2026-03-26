@@ -81,7 +81,7 @@ Read `guides/input-collection-guide.md` Sections 2-8 for the full procedure. Sum
 1. Read `~/.career-spotlight/report.md`.
 2. Read `guides/copywriting-guide.md` and follow its methodology.
 3. Archive any existing files in `~/.career-spotlight/copies/` to `history/` with timestamp suffix.
-4. Write four files to `~/.career-spotlight/copies/`:
+4. Write four files to `~/.career-spotlight/copies/` using `templates/copywriting-variants.md`:
    - `resume-bullets.md`
    - `elevator-pitch.md`
    - `linkedin-summary.md`
@@ -97,4 +97,4 @@ Then offer:
 2. Change domain direction → Step 2
 3. Adjust narrative emphasis → Step 3
 4. Regenerate copy variants → Step 4
-5. Accept and finish
+5. Accept and finish — remind the user their files are at `~/.career-spotlight/`

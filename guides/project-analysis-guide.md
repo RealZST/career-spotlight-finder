@@ -361,7 +361,7 @@ After completing the five-dimension extraction for a project, immediately write 
 
 **File path:** `~/.career-spotlight/analyses/[slugified-name].md`
 
-Refer to the naming rules in SKILL.md Step 1 for slugification:
+Refer to the naming rules in `guides/input-collection-guide.md` Section 8 for slugification:
 - Directory path -> slugify the directory name
 - Single file -> slugify as `parentdir-filename`
 - On collision -> append `-2`, `-3`, etc.
